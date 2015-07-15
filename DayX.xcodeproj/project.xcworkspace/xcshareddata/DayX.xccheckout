@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>579841BB-BBC1-4A63-8E7D-2488825CC888</string>
 	<key>IDESourceControlProjectName</key>
-	<string>DayX</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>8466339990A80563F05BC559469B00CD06339361</key>
 		<string>https://github.com/esmludlow/Day-X.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>DayX.xcodeproj</string>
+	<string>DayX.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>8466339990A80563F05BC559469B00CD06339361</key>

@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "EntryController.h"
+#import "Entry.h"
 @import UIKit;
 
 @interface ListTableViewDataSource : NSObject <UITableViewDataSource>

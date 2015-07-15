@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		0F54AE5C1B55B3BD00C54515 /* ListTableViewDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F54AE5B1B55B3BD00C54515 /* ListTableViewDataSource.m */; };
 		0F54AE5F1B55BB2600C54515 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F54AE5E1B55BB2600C54515 /* DetailViewController.m */; };
+		0F5BEF6B1B56FB3E0092C86C /* Entry.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5BEF6A1B56FB3E0092C86C /* Entry.m */; };
+		0F5BEF6E1B56FBCD0092C86C /* EntryController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F5BEF6D1B56FBCD0092C86C /* EntryController.m */; };
 		68FFDFDC1AD8144B009F5D0A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FFDFDB1AD8144B009F5D0A /* main.m */; };
 		68FFDFDF1AD8144B009F5D0A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FFDFDE1AD8144B009F5D0A /* AppDelegate.m */; };
 		68FFDFE21AD8144B009F5D0A /* ListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 68FFDFE11AD8144B009F5D0A /* ListViewController.m */; };
@@ -33,6 +35,10 @@
 		0F54AE5B1B55B3BD00C54515 /* ListTableViewDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ListTableViewDataSource.m; sourceTree = "<group>"; };
 		0F54AE5D1B55BB2600C54515 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
 		0F54AE5E1B55BB2600C54515 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		0F5BEF691B56FB3E0092C86C /* Entry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Entry.h; sourceTree = "<group>"; };
+		0F5BEF6A1B56FB3E0092C86C /* Entry.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Entry.m; sourceTree = "<group>"; };
+		0F5BEF6C1B56FBCD0092C86C /* EntryController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryController.h; sourceTree = "<group>"; };
+		0F5BEF6D1B56FBCD0092C86C /* EntryController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryController.m; sourceTree = "<group>"; };
 		68FFDFD61AD8144B009F5D0A /* DayX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DayX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68FFDFDA1AD8144B009F5D0A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68FFDFDB1AD8144B009F5D0A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -95,6 +101,10 @@
 				0F54AE5B1B55B3BD00C54515 /* ListTableViewDataSource.m */,
 				0F54AE5D1B55BB2600C54515 /* DetailViewController.h */,
 				0F54AE5E1B55BB2600C54515 /* DetailViewController.m */,
+				0F5BEF691B56FB3E0092C86C /* Entry.h */,
+				0F5BEF6A1B56FB3E0092C86C /* Entry.m */,
+				0F5BEF6C1B56FBCD0092C86C /* EntryController.h */,
+				0F5BEF6D1B56FBCD0092C86C /* EntryController.m */,
 				68FFDFE31AD8144B009F5D0A /* Main.storyboard */,
 				68FFDFE61AD8144B009F5D0A /* Images.xcassets */,
 				68FFDFE81AD8144B009F5D0A /* LaunchScreen.xib */,
@@ -229,9 +239,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0F5BEF6B1B56FB3E0092C86C /* Entry.m in Sources */,
 				0F54AE5F1B55BB2600C54515 /* DetailViewController.m in Sources */,
 				68FFDFE21AD8144B009F5D0A /* ListViewController.m in Sources */,
 				68FFDFDF1AD8144B009F5D0A /* AppDelegate.m in Sources */,
+				0F5BEF6E1B56FBCD0092C86C /* EntryController.m in Sources */,
 				0F54AE5C1B55B3BD00C54515 /* ListTableViewDataSource.m in Sources */,
 				68FFDFDC1AD8144B009F5D0A /* main.m in Sources */,
 			);

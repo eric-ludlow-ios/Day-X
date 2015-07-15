@@ -68,6 +68,9 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="Jpu-st-C6j" id="NRe-BK-o7e"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
                 <customObject id="ShQ-QD-HDB" customClass="ListTableViewDataSource"/>
@@ -101,8 +104,7 @@
                                 <rect key="frame" x="41" y="114" width="519" height="211"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <attributedString key="attributedText">
-                                    <fragment>
-                                        <string key="content">Dear Day-X: Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                    <fragment content="Dear Day-X: ...">
                                         <attributes>
                                             <font key="NSFont" size="14" name="Chalkboard"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="left" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
@@ -134,7 +136,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="textViewDone:" destination="owy-tk-DkS" eventType="touchUpInside" id="n8v-wj-SpT"/>
+                                    <action selector="textViewDoneButtonTapped:" destination="owy-tk-DkS" eventType="touchUpInside" id="3Sw-tK-PlS"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -159,6 +161,13 @@
                             <constraint firstItem="4dJ-tm-fCe" firstAttribute="top" secondItem="mnS-Fd-Um2" secondAttribute="bottom" constant="50" id="ra6-ve-UIb"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="tjL-kn-nP7">
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="OdN-oY-gcb">
+                            <connections>
+                                <action selector="saveBarButtonTapped:" destination="owy-tk-DkS" id="BCS-4B-CSE"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="textField" destination="aS9-OZ-yz0" id="nbF-N1-Swf"/>
                         <outlet property="textView" destination="4dJ-tm-fCe" id="rB2-x6-pgW"/>
@@ -170,6 +179,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="A6b-CR-rqH"/>
+        <segue reference="6bY-hO-6Bv"/>
     </inferredMetricsTieBreakers>
 </document>

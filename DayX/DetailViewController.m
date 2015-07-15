@@ -7,6 +7,7 @@
 //
 
 #import "DetailViewController.h"
+#import "EntryController.h"
 
 @interface DetailViewController ()
 
@@ -21,6 +22,37 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    [self updateWithEntry];
+}
+
+- (void)updateWithEntry {
+    
+    self.textField.text = self.entry.entryTitle;
+    self.textView.text = self.entry.bodyText;
+}
+
+- (IBAction)saveBarButtonTapped:(id)sender {
+    
+    //In the saveButtonTapped: method, add a check to see if self.entry exists. If so, update the entry's properties in place. If not, create a new entry.
+    
+    if (self.entry) {
+        self.entry.entryTitle = self.textField.text;
+        self.entry.bodyText = self.textView.text;
+        self.entry.mostRecentTimeStamp = [NSDate new];
+        
+    } else {
+        
+        self.entry = [Entry new];
+        
+        //make it save the title, text, and date/time
+        self.entry.entryTitle = self.textField.text;
+        self.entry.bodyText = self.textView.text;
+        self.entry.createdTimeStamp = [NSDate new];
+        
+        [[EntryController sharedInstance] addEntry:self.entry];
+    }
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {
@@ -29,7 +61,7 @@
     return YES;
 }
 
-- (IBAction)textViewDone:(id)sender {
+- (IBAction)textViewDoneButtonTapped:(id)sender {
     
     [self.textView resignFirstResponder];
 }

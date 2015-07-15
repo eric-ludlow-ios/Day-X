@@ -14,19 +14,22 @@ static NSString *entryCell = @"entryCell";
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return 5;
+    return [EntryController sharedInstance].allEntries.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:entryCell];
     
-    //do not use the 'if' statement code if you are not initializing cells with style (and are registering cells instead)
+    //use this 'if' statement code if you are initializing cells with style (instead of registering cells)
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:entryCell];
     }
     
-    cell.textLabel.text = [NSString stringWithFormat:@"Entry %i", (int)indexPath.row];
+       //Update cellForRowAtIndexPath to set the label to the title of the Entry, use the [EntryController sharedInstance] entries array and the indexPath.row to update the label with the correct Entry
+    
+    Entry *entry = [EntryController sharedInstance].allEntries[indexPath.row];
+    cell.textLabel.text = entry.entryTitle;
     
     return cell;
 }
