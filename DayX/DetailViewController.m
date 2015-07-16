@@ -41,6 +41,8 @@
         self.entry.bodyText = self.textView.text;
         self.entry.mostRecentTimeStamp = [NSDate new];
         
+        [[EntryController sharedInstance] saveToPersistentStorage];
+        
     } else {
         
         self.entry = [Entry new];
@@ -52,7 +54,6 @@
         
         [[EntryController sharedInstance] addEntry:self.entry];
     }
-    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

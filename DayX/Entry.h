@@ -15,4 +15,7 @@
 @property (strong) NSDate *createdTimeStamp;
 @property (strong) NSDate *mostRecentTimeStamp;
 
+- (instancetype)initWithDictionary:(NSDictionary *)dictionary;
+- (NSDictionary *)dictionaryRepresentation;
+
 @end

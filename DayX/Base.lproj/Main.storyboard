@@ -21,7 +21,7 @@
             </objects>
             <point key="canvasLocation" x="-22" y="204"/>
         </scene>
-        <!--List View Title-->
+        <!--Day X Journal Log-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
                 <viewController id="vXZ-lx-hvc" customClass="ListViewController" sceneMemberID="viewController">
@@ -61,7 +61,7 @@
                             <constraint firstItem="Jpu-st-C6j" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="qnJ-MZ-JiV"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="List View Title" id="iYU-WA-mHX">
+                    <navigationItem key="navigationItem" title="Day X Journal Log" id="iYU-WA-mHX">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="933-P1-mfh">
                             <connections>
                                 <segue destination="owy-tk-DkS" kind="show" identifier="addEntry" id="A6b-CR-rqH"/>
@@ -77,7 +77,7 @@
             </objects>
             <point key="canvasLocation" x="665" y="204"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--Day X Journal Entry-->
         <scene sceneID="lKf-ZK-nif">
             <objects>
                 <viewController id="owy-tk-DkS" customClass="DetailViewController" sceneMemberID="viewController">
@@ -161,7 +161,7 @@
                             <constraint firstItem="4dJ-tm-fCe" firstAttribute="top" secondItem="mnS-Fd-Um2" secondAttribute="bottom" constant="50" id="ra6-ve-UIb"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="tjL-kn-nP7">
+                    <navigationItem key="navigationItem" title="Day X Journal Entry" id="tjL-kn-nP7">
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="OdN-oY-gcb">
                             <connections>
                                 <action selector="saveBarButtonTapped:" destination="owy-tk-DkS" id="BCS-4B-CSE"/>
