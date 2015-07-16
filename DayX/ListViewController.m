@@ -38,7 +38,6 @@
 
         DetailViewController *destinationViewControllerInstance = segue.destinationViewController;
         
-        //use indexPathForSelectedRow: it's magic: it already knows which row you selected, you don't have to tell it
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         
         destinationViewControllerInstance.entry = [EntryController sharedInstance].allEntries[indexPath.row];
