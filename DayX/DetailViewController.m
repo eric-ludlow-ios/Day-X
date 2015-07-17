@@ -9,7 +9,7 @@
 #import "DetailViewController.h"
 #import "EntryController.h"
 
-@interface DetailViewController ()
+@interface DetailViewController () <UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITextField *textField;
 
@@ -29,6 +29,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    self.textView.delegate = self;
+    
     [self updateWithEntry];
 }
 
@@ -38,6 +40,7 @@
     self.textView.text = self.entry.bodyText;
     
     [self updateDate];
+    [self textViewDidChange:self.textView];
     
 }
 
@@ -50,6 +53,11 @@
     } else {
         self.dateSavedLabel.text = @"";
     }
+}
+
+- (void)textViewDidChange:(UITextView *)textView {
+    
+    self.characterCountLabel.text = [NSString stringWithFormat:@"Character Count: %i", (int)textView.text.length];
 }
 
 - (IBAction)saveBarButtonTapped:(id)sender {

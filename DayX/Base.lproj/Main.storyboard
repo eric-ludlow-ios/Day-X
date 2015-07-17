@@ -124,7 +124,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Entry Title" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aS9-OZ-yz0">
-                                <rect key="frame" x="21" y="74" width="559" height="30"/>
+                                <rect key="frame" x="21" y="69" width="559" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.9662664916" blue="0.88658571060000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AjW-jJ-gOj"/>
@@ -144,7 +144,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-tm-fCe">
-                                <rect key="frame" x="21" y="114" width="559" height="201"/>
+                                <rect key="frame" x="21" y="104" width="559" height="211"/>
                                 <color key="backgroundColor" red="1" green="0.9662664916" blue="0.88658571060000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Dear Day-X: ...">
@@ -228,8 +228,8 @@
                             <constraint firstItem="Dkt-GQ-gMp" firstAttribute="top" secondItem="sj9-nf-GnO" secondAttribute="bottom" constant="269" id="q3z-lY-3PU">
                                 <variation key="heightClass=compact" constant="209"/>
                             </constraint>
-                            <constraint firstItem="aS9-OZ-yz0" firstAttribute="top" secondItem="mnS-Fd-Um2" secondAttribute="bottom" constant="10" id="qp1-em-xRF"/>
-                            <constraint firstItem="4dJ-tm-fCe" firstAttribute="top" secondItem="mnS-Fd-Um2" secondAttribute="bottom" constant="50" id="ra6-ve-UIb"/>
+                            <constraint firstItem="aS9-OZ-yz0" firstAttribute="top" secondItem="mnS-Fd-Um2" secondAttribute="bottom" constant="5" id="qp1-em-xRF"/>
+                            <constraint firstItem="4dJ-tm-fCe" firstAttribute="top" secondItem="mnS-Fd-Um2" secondAttribute="bottom" constant="40" id="ra6-ve-UIb"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Day X Journal Entry" id="tjL-kn-nP7">
