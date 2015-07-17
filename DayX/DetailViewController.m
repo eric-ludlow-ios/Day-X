@@ -15,6 +15,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
+@property (weak, nonatomic) IBOutlet UILabel *characterCountTitleLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *characterCountLabel;
+
+@property (weak, nonatomic) IBOutlet UILabel *dateSavedLabel;
+
 @end
 
 @implementation DetailViewController
@@ -30,6 +36,20 @@
     
     self.textField.text = self.entry.entryTitle;
     self.textView.text = self.entry.bodyText;
+    
+    [self updateDate];
+    
+}
+
+- (void)updateDate {
+    
+    if (self.entry.mostRecentTimeStamp) {
+        self.dateSavedLabel.text = [NSString stringWithFormat:@"Saved: %@", [NSDateFormatter localizedStringFromDate:self.entry.mostRecentTimeStamp dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle]];
+    } else if (self.entry.createdTimeStamp){
+        self.dateSavedLabel.text = [NSString stringWithFormat:@"Saved: %@", [NSDateFormatter localizedStringFromDate:self.entry.createdTimeStamp dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle]];
+    } else {
+        self.dateSavedLabel.text = @"";
+    }
 }
 
 - (IBAction)saveBarButtonTapped:(id)sender {
@@ -41,6 +61,8 @@
         self.entry.bodyText = self.textView.text;
         self.entry.mostRecentTimeStamp = [NSDate new];
         
+        [self updateDate];
+        
         [[EntryController sharedInstance] saveToPersistentStorage];
         
     } else {
@@ -51,6 +73,8 @@
         self.entry.entryTitle = self.textField.text;
         self.entry.bodyText = self.textView.text;
         self.entry.createdTimeStamp = [NSDate new];
+        
+        [self updateDate];
         
         [[EntryController sharedInstance] addEntry:self.entry];
     }

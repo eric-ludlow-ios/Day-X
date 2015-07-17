@@ -32,9 +32,9 @@ static NSString *entryCell = @"entryCell";
     cell.textLabel.text = entry.entryTitle;
     
     if (entry.mostRecentTimeStamp) {
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"last saved: %@", entry.mostRecentTimeStamp];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"last saved: %@", [NSDateFormatter localizedStringFromDate:entry.mostRecentTimeStamp dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle]];
     } else {
-        cell.detailTextLabel.text = [NSString stringWithFormat:@"created: %@", entry.createdTimeStamp];
+        cell.detailTextLabel.text = [NSString stringWithFormat:@"created: %@", [NSDateFormatter localizedStringFromDate:entry.createdTimeStamp dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterShortStyle]];
     }
     
     return cell;

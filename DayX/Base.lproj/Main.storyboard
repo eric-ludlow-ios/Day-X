@@ -124,13 +124,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" usesAttributedText="YES" borderStyle="roundedRect" placeholder="Entry Title" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aS9-OZ-yz0">
-                                <rect key="frame" x="41" y="74" width="519" height="30"/>
+                                <rect key="frame" x="21" y="74" width="559" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.9662664916" blue="0.88658571060000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="AjW-jJ-gOj"/>
                                 </constraints>
                                 <attributedString key="attributedText">
-                                    <fragment content="text">
+                                    <fragment content="Title">
                                         <attributes>
                                             <color key="NSColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                             <font key="NSFont" size="24" name="BradleyHandITCTT-Bold"/>
@@ -144,7 +144,7 @@
                                 </connections>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" usesAttributedText="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4dJ-tm-fCe">
-                                <rect key="frame" x="41" y="114" width="519" height="211"/>
+                                <rect key="frame" x="21" y="114" width="559" height="201"/>
                                 <color key="backgroundColor" red="1" green="0.9662664916" blue="0.88658571060000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <attributedString key="attributedText">
                                     <fragment content="Dear Day-X: ...">
@@ -182,24 +182,52 @@
                                     <action selector="textViewDoneButtonTapped:" destination="owy-tk-DkS" eventType="touchUpInside" id="3Sw-tK-PlS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Character Count: 22222" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dGw-n6-99t">
+                                <rect key="frame" x="21" y="310" width="135" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="nYo-Xa-ZeN"/>
+                                    <constraint firstAttribute="width" constant="135" id="rQp-Rc-T9a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Saved: 12/22/22, 12:22 AM" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sj9-nf-GnO">
+                                <rect key="frame" x="426" y="310" width="153" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="153" id="kdw-fi-DMV"/>
+                                    <constraint firstAttribute="height" constant="21" id="qNR-X4-4Vm"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.94528093434343441" green="0.81600232398836892" blue="0.65736748234838083" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4dJ-tm-fCe" firstAttribute="leading" secondItem="fk4-cM-YXU" secondAttribute="leadingMargin" constant="25" id="05c-lh-XWf"/>
+                            <constraint firstItem="4dJ-tm-fCe" firstAttribute="leading" secondItem="fk4-cM-YXU" secondAttribute="leadingMargin" constant="5" id="05c-lh-XWf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="BPU-WS-jiz" secondAttribute="trailing" constant="25" id="1xU-Uv-4xO"/>
+                            <constraint firstItem="dGw-n6-99t" firstAttribute="leading" secondItem="fk4-cM-YXU" secondAttribute="leadingMargin" constant="5" id="7b8-ZL-aef"/>
                             <constraint firstItem="VVs-nH-Fsh" firstAttribute="leading" secondItem="fk4-cM-YXU" secondAttribute="leadingMargin" constant="25" id="GYq-cC-m6V"/>
                             <constraint firstItem="Dkt-GQ-gMp" firstAttribute="top" secondItem="BPU-WS-jiz" secondAttribute="bottom" constant="250" id="LzE-8B-Mie">
                                 <variation key="heightClass=compact" constant="190"/>
                             </constraint>
                             <constraint firstAttribute="centerX" secondItem="4dJ-tm-fCe" secondAttribute="centerX" constant="-0.5" id="NAg-nc-mFs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="sj9-nf-GnO" secondAttribute="trailing" constant="5" id="hqD-0o-qfz"/>
                             <constraint firstAttribute="centerX" secondItem="aS9-OZ-yz0" secondAttribute="centerX" constant="-0.5" id="iYs-HQ-K1v"/>
-                            <constraint firstItem="Dkt-GQ-gMp" firstAttribute="top" secondItem="4dJ-tm-fCe" secondAttribute="bottom" constant="275" id="lG4-9E-84K">
-                                <variation key="heightClass=compact" constant="215"/>
+                            <constraint firstItem="Dkt-GQ-gMp" firstAttribute="top" secondItem="4dJ-tm-fCe" secondAttribute="bottom" constant="285" id="lG4-9E-84K">
+                                <variation key="heightClass=compact" constant="225"/>
+                            </constraint>
+                            <constraint firstItem="Dkt-GQ-gMp" firstAttribute="top" secondItem="dGw-n6-99t" secondAttribute="bottom" constant="269" id="m5P-Rq-Ggl">
+                                <variation key="heightClass=compact" constant="209"/>
                             </constraint>
                             <constraint firstItem="Dkt-GQ-gMp" firstAttribute="top" secondItem="VVs-nH-Fsh" secondAttribute="bottom" constant="250" id="oaH-V9-UI8">
                                 <variation key="heightClass=compact" constant="190"/>
                             </constraint>
-                            <constraint firstItem="aS9-OZ-yz0" firstAttribute="leading" secondItem="fk4-cM-YXU" secondAttribute="leadingMargin" constant="25" id="owL-A1-T7g"/>
+                            <constraint firstItem="aS9-OZ-yz0" firstAttribute="leading" secondItem="fk4-cM-YXU" secondAttribute="leadingMargin" constant="5" id="owL-A1-T7g"/>
+                            <constraint firstItem="Dkt-GQ-gMp" firstAttribute="top" secondItem="sj9-nf-GnO" secondAttribute="bottom" constant="269" id="q3z-lY-3PU">
+                                <variation key="heightClass=compact" constant="209"/>
+                            </constraint>
                             <constraint firstItem="aS9-OZ-yz0" firstAttribute="top" secondItem="mnS-Fd-Um2" secondAttribute="bottom" constant="10" id="qp1-em-xRF"/>
                             <constraint firstItem="4dJ-tm-fCe" firstAttribute="top" secondItem="mnS-Fd-Um2" secondAttribute="bottom" constant="50" id="ra6-ve-UIb"/>
                         </constraints>
@@ -212,6 +240,8 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="characterCountLabel" destination="dGw-n6-99t" id="nnP-Ol-FZh"/>
+                        <outlet property="dateSavedLabel" destination="sj9-nf-GnO" id="lBz-vb-NBE"/>
                         <outlet property="textField" destination="aS9-OZ-yz0" id="nbF-N1-Swf"/>
                         <outlet property="textView" destination="4dJ-tm-fCe" id="rB2-x6-pgW"/>
                     </connections>
