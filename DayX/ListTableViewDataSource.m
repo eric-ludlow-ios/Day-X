@@ -21,11 +21,6 @@ static NSString *entryCell = @"entryCell";
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:entryCell];
     
-    //use this 'if' statement code if you are initializing cells with style (instead of registering cells or using storyboards to register cells)
-//    if (!cell) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle  reuseIdentifier:entryCell];
-//    }
-    
        //Update cellForRowAtIndexPath to set the label to the title of the Entry, use the [EntryController sharedInstance] entries array and the indexPath.row to update the label with the correct Entry
     
     Entry *entry = [EntryController sharedInstance].allEntries[indexPath.row];
@@ -38,6 +33,14 @@ static NSString *entryCell = @"entryCell";
     }
     
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    Entry *entry = [EntryController sharedInstance].allEntries[indexPath.row];
+    [[EntryController sharedInstance] removeEntry:entry];
+    
+    [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 }
 
 @end

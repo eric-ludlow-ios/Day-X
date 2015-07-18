@@ -102,6 +102,8 @@
 
 - (IBAction)clearButtonTapped:(id)sender {
     
+    //icon 'undo_256' from Website: www.visualpharm.com: free commercial use license
+    
     self.textField.text = @"";
     self.textView.text = @"";
 }

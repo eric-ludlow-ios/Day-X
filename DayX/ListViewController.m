@@ -22,6 +22,18 @@
     // Do any additional setup after loading the view, typically from a nib.
 }
 
+- (IBAction)editButtonTouched:(id)sender {
+    
+    BOOL shouldEdit;
+    if (self.tableView.editing == YES) {
+        shouldEdit = NO;
+    } else {
+        shouldEdit = YES;
+    }
+    
+    [self.tableView setEditing:shouldEdit animated:YES];
+}
+
 - (void)viewWillAppear:(BOOL)animated {
     
     [self.tableView reloadData];
