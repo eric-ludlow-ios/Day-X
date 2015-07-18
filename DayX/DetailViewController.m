@@ -15,8 +15,6 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 
-@property (weak, nonatomic) IBOutlet UILabel *characterCountTitleLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *characterCountLabel;
 
 @property (weak, nonatomic) IBOutlet UILabel *dateSavedLabel;
