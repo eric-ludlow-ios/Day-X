@@ -69,11 +69,9 @@
         
         [self updateDate];
         
-        [[EntryController sharedInstance] saveToPersistentStorage];
-        
     } else {
         
-        self.entry = [Entry new];
+        self.entry = [[EntryController sharedInstance] createEntry];  //changed from NSUserDefaults code to CoreData code
         
         //make it save the title, text, and date/time
         self.entry.entryTitle = self.textField.text;
@@ -81,9 +79,10 @@
         self.entry.createdTimeStamp = [NSDate new];
         
         [self updateDate];
-        
-        [[EntryController sharedInstance] addEntry:self.entry];
     }
+    
+    [[EntryController sharedInstance] save];
+    
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField {

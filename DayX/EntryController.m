@@ -7,8 +7,7 @@
 //
 
 #import "EntryController.h"
-
-static NSString *allEntriesKey = @"allEntries";
+#import "Stack.h"
 
 @interface EntryController ()
 
@@ -19,69 +18,58 @@ static NSString *allEntriesKey = @"allEntries";
 
 @implementation EntryController
 
-//retrieve
+//update and retrieve
 + (EntryController *)sharedInstance {
     static EntryController *sharedInstance = nil;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         sharedInstance = [EntryController new];
-        sharedInstance.allEntries = @[];
-        [sharedInstance loadFromPersistentStorage];
     });
     
     return sharedInstance;
 }
 
-//create (and update)
-- (void)addEntry:(Entry *)entry {
+//create (new CoreData method)
+
+- (Entry *)createEntry {
+    Entry *entry = [NSEntityDescription insertNewObjectForEntityForName:@"Entry"
+                                                 inManagedObjectContext:[Stack sharedInstance].managedObjectContext];
     
-    if (!entry) {
-        return;
-    }
-    
-    NSMutableArray *mutableEntries = [self.allEntries mutableCopy];
-    [mutableEntries addObject:entry];
-    self.allEntries = mutableEntries;
-    
-    [self saveToPersistentStorage];
+    return entry;
 }
 
-//delete (and update)
+//retrieve   (modify getter method of our Array property) (new CoreData method)
+
+- (NSArray *)allEntries {
+    
+    NSFetchRequest *request = [NSFetchRequest fetchRequestWithEntityName:@"Entry"];
+    //maybe set some predicates
+    //maybe set sort property
+    
+    //now execute the request on the managed object context
+    NSError *error;
+    
+    NSArray *allEntries = [[Stack sharedInstance].managedObjectContext executeFetchRequest:request
+                                                               error:&error];
+    if (error) {
+        NSLog(@"Error fetching objects : %@", error.localizedDescription);
+    }
+    
+    return allEntries;
+}
+
+//update
+
+- (void)save {
+    
+    [[Stack sharedInstance].managedObjectContext save:nil];
+}
+
+//delete
 - (void)removeEntry:(Entry *)entry {
     
-    if (!entry) {
-        return;
-    }
-    
-    NSMutableArray *mutableEntries = [self.allEntries mutableCopy];
-    [mutableEntries removeObject:entry];
-    self.allEntries = mutableEntries;
-    
-    [self saveToPersistentStorage];
+    [entry.managedObjectContext deleteObject:entry];
 }
 
-- (void)saveToPersistentStorage {
-    
-    //iterate through the self.entries array, create an NSDictionary representation of each Entry, add it to a temporary NSMutableArray, and save that NSMutableArray to NSUserDefaults using an 'AllEntriesKey'
-    
-    NSMutableArray *entryDictionariesArray = [NSMutableArray new];
-    for (Entry *entry in self.allEntries) {
-        [entryDictionariesArray addObject:[entry dictionaryRepresentation]];
-    }
-    [[NSUserDefaults standardUserDefaults] setObject:entryDictionariesArray forKey:allEntriesKey];
-}
-
-- (void)loadFromPersistentStorage {
-    
-    //load the array of NSDictionaries from NSUserDefaults using the AllEntriesKey, iterate through the array, initialize an Entry for each NSDictionary and add it to a NSMutableArray, and set self.entries to that NSMutableArray
-    NSMutableArray *mutableEntries = [NSMutableArray new];
-    
-    NSArray *entryDictionariesArray = [[NSUserDefaults standardUserDefaults] objectForKey:allEntriesKey];
-    for (NSDictionary *dictionary in entryDictionariesArray) {
-        [mutableEntries addObject:[[Entry new] initWithDictionary:dictionary]];
-        self.allEntries = mutableEntries;
-    }
-    
-}
 
 @end

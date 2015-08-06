@@ -15,12 +15,10 @@
 
 + (EntryController *)sharedInstance;
 
-- (void)addEntry:(Entry *)entry;
+- (Entry *)createEntry;  //new method for CoreData
+
+- (void)save;
 
 - (void)removeEntry:(Entry *)entry;
-
-- (void)saveToPersistentStorage;
-
-- (void)loadFromPersistentStorage;
 
 @end
