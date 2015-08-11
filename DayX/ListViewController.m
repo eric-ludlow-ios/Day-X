@@ -10,8 +10,10 @@
 #import "EntryController.h"
 #import "DetailViewController.h"
 
-@interface ListViewController ()
+@interface ListViewController ()<UITableViewDelegate>
+
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *editButton;
 
 @end
 
@@ -20,15 +22,19 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.editButton.title = @"Edit";
 }
 
 - (IBAction)editButtonTouched:(id)sender {
     
     BOOL shouldEdit;
-    if (self.tableView.editing == YES) {
-        shouldEdit = NO;
-    } else {
+    if (self.tableView.editing == NO) {
         shouldEdit = YES;
+        self.editButton.title = @"Done";
+    } else {
+        shouldEdit = NO;
+        self.editButton.title = @"Edit";
     }
     
     [self.tableView setEditing:shouldEdit animated:YES];
@@ -55,6 +61,20 @@
         destinationViewControllerInstance.entry = [EntryController sharedInstance].allEntries[indexPath.row];
     }
 }
+
+# pragma mark - table view delegate method
+
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    
+    if (tableView.editing) {
+        return UITableViewCellEditingStyleDelete;
+    } else {
+        
+        return UITableViewCellEditingStyleNone;
+    }
+}
+
+#pragma mark - memory warning method
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

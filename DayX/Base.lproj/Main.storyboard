@@ -85,6 +85,7 @@
                                 </prototypes>
                                 <connections>
                                     <outlet property="dataSource" destination="ShQ-QD-HDB" id="7lo-PU-ebG"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="MpI-XG-4p4"/>
                                 </connections>
                             </tableView>
                         </subviews>
@@ -97,7 +98,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Day X Journal Log" id="iYU-WA-mHX" userLabel="title label">
-                        <barButtonItem key="leftBarButtonItem" systemItem="edit" id="I4y-bG-fWM">
+                        <barButtonItem key="leftBarButtonItem" title="edit/done" id="I4y-bG-fWM">
                             <connections>
                                 <action selector="editButtonTouched:" destination="vXZ-lx-hvc" id="aG7-jc-E6Q"/>
                             </connections>
@@ -109,6 +110,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="editButton" destination="I4y-bG-fWM" id="Npl-Nb-0I1"/>
                         <outlet property="tableView" destination="Jpu-st-C6j" id="NRe-BK-o7e"/>
                     </connections>
                 </viewController>
